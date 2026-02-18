@@ -11,10 +11,10 @@ const Footer = () => {
         </p>
 
         <div className="flex items-center justify-center gap-5 mb-12">
-          <a href="#" className="flex items-center gap-2 px-4 py-2 border border-border rounded-lg text-sm hover:border-primary/50 hover:text-primary transition-colors font-mono">
+          <a href="https://github.com/Shashankshek" className="flex items-center gap-2 px-4 py-2 border border-border rounded-lg text-sm hover:border-primary/50 hover:text-primary transition-colors font-mono">
             <Github size={16} /> GitHub
           </a>
-          <a href="#" className="flex items-center gap-2 px-4 py-2 border border-border rounded-lg text-sm hover:border-primary/50 hover:text-primary transition-colors font-mono">
+          <a href="https://www.linkedin.com/in/shashank-shekhar-48918b1aa/" className="flex items-center gap-2 px-4 py-2 border border-border rounded-lg text-sm hover:border-primary/50 hover:text-primary transition-colors font-mono">
             <Linkedin size={16} /> LinkedIn
           </a>
           <a href="mailto:shashank@example.com" className="flex items-center gap-2 px-4 py-2 border border-border rounded-lg text-sm hover:border-primary/50 hover:text-primary transition-colors font-mono">

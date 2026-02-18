@@ -29,8 +29,8 @@ const Navbar = () => {
       }`}
     >
       <div className="max-w-5xl mx-auto flex items-center justify-between px-6 py-4">
-        <a href="#" className="font-mono font-bold text-primary text-lg">
-          SS<span className="text-foreground">.</span>
+        <a href="/shashank-logo-s.jpeg" className="font-mono font-bold text-primary text-lg">
+          SS<span className="text-foreground"></span>
         </a>
         <div className="hidden md:flex items-center gap-6">
           {links.map((link) => (

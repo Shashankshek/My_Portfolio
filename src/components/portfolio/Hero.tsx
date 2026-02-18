@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
+import { Download } from "lucide-react";
 
 const Hero = () => {
   return (
@@ -61,6 +62,14 @@ const Hero = () => {
           <a href="#contact" className="px-6 py-3 border border-border text-foreground font-mono text-sm rounded-lg hover:border-primary/50 transition-colors">
             Get in Touch
           </a>
+          <a
+            href="/Shashank_u-Resume.pdf"
+            download
+            className="px-6 py-3 bg-primary text-primary-foreground font-mono text-sm rounded-lg hover:opacity-90 transition-opacity inline-flex items-center gap-2"
+          >
+          Resume <Download size={18} />
+          </a>
+
         </motion.div>
 
         <motion.div
@@ -70,8 +79,8 @@ const Hero = () => {
           className="flex items-center justify-center gap-5 mt-10"
         >
           {[
-            { icon: Github, href: "#", label: "GitHub" },
-            { icon: Linkedin, href: "#", label: "LinkedIn" },
+            { icon: Github, href: "https://github.com/Shashankshek", label: "GitHub" },
+            { icon: Linkedin, href: "https://www.linkedin.com/in/shashank-shekhar-48918b1aa/", label: "LinkedIn" },
             { icon: Mail, href: "mailto:shashank@example.com", label: "Email" },
           ].map(({ icon: Icon, href, label }) => (
             <a
