@@ -98,3 +98,7 @@
   animation: blink 1s step-end infinite;
   @apply text-primary ml-0.5;
 }
+
+.swal2-popup {
+  box-shadow: 0 0 20px hsl(var(--primary) / 0.15);
+}

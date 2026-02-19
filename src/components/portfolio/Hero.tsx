@@ -1,6 +1,28 @@
 import { motion } from "framer-motion";
 import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
 import { Download } from "lucide-react";
+import Swal from "sweetalert2";
+import { showSuccessToast } from "@/utils/swalToast";
+
+
+const RotatingLetter = ({ children }: { children: React.ReactNode }) => {
+  return (
+    <motion.span
+      style={{ display: "inline-block", transformStyle: "preserve-3d" }}
+      animate={{ rotateY: [0, 180, 180, 360] }}
+      transition={{
+        duration: 6,        // rotation speed
+        ease: "easeInOut",
+        repeat: Infinity,   // repeat forever
+        times: [0, 0.25, 0.6, 1],
+      }}
+    >
+      {children}
+    </motion.span>
+  );
+};
+
+
 
 const Hero = () => {
   return (
@@ -18,10 +40,24 @@ const Hero = () => {
           transition={{ duration: 0.5 }}
           className="font-mono text-primary text-sm tracking-widest uppercase mb-6"
         >
-          
         </motion.p>
-        
         <motion.h1
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.15 }}
+          className="text-5xl md:text-7xl font-bold mb-4 tracking-tight [perspective:1000px]"
+        >
+          <RotatingLetter>S</RotatingLetter>
+          hashank{" "}
+          <span>
+    <RotatingLetter>
+      <span className="text-gradient">S</span>
+    </RotatingLetter>
+    <span className="text-gradient">hekhar</span>
+  </span>
+        </motion.h1>
+
+        {/* <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.15 }}
@@ -29,7 +65,7 @@ const Hero = () => {
         >
           Shashank{" "}
           <span className="text-gradient">Shekhar</span>
-        </motion.h1>
+        </motion.h1> */}
         
         <motion.p
           initial={{ opacity: 0, y: 30 }}
@@ -65,10 +101,12 @@ const Hero = () => {
           <a
             href="/Shashank_u-Resume.pdf"
             download
+            onClick={() => showSuccessToast("Resume downloading...")}
             className="px-6 py-3 bg-primary text-primary-foreground font-mono text-sm rounded-lg hover:opacity-90 transition-opacity inline-flex items-center gap-2"
           >
-          Resume <Download size={18} />
+            Resume <Download size={18} />
           </a>
+
 
         </motion.div>
 
@@ -81,7 +119,7 @@ const Hero = () => {
           {[
             { icon: Github, href: "https://github.com/Shashankshek", label: "GitHub" },
             { icon: Linkedin, href: "https://www.linkedin.com/in/shashank-shekhar-48918b1aa/", label: "LinkedIn" },
-            { icon: Mail, href: "mailto:shashank@example.com", label: "Email" },
+            { icon: Mail, href: "mailto:shashank.shekhar0214@.com", label: "Email" },
           ].map(({ icon: Icon, href, label }) => (
             <a
               key={label}
